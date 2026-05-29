@@ -84,7 +84,7 @@ CTA, soft sign-off, or engagement question.
 ## Format Rules
 
 - **Line length:** One or two sentences per line maximum. Never long paragraphs.
-- **White space:** Heavy. Line break every few lines. Scroll-friendly.
+- **White space:** Heavy. **Every single line or phrase must be separated by a blank line** — not just grouped paragraphs. This is critical: when posts are written without a blank line between every line, the spacing collapses when copied from Notion, making posts read as dense blocks. Even a one-liner like "But that didn't stop me..." gets its own blank line above and below.
 - **Ellipsis:** Use ... for pacing and dramatic rhythm in personal story posts. "Back in 2018..." / "But that didn't stop me..."
 - **Emoji:** Use where they fit naturally — not as a rule. A single relevant emoji can work at the top of a post if it adds to the feel (e.g. 💚 for a healing story). ⏩ for lists. Never forced. Never mid-post unless it genuinely fits.
 - **No hyphens as clause separators.** Use a full stop instead.
@@ -96,19 +96,23 @@ CTA, soft sign-off, or engagement question.
 
 ## CTAs
 
-**Standard CTA (use when no live event is running):**
+**Standard CTA (use selectively — not on every Personal Story):**
 ```
 If you'd like to learn how to regulate your nervous system with Heart Coherence so that you can get your life back, check out the link to my free community in the comments below.
 ```
 
-**Engagement close (for Engagement posts):**
-End with the question. No explicit CTA needed — the comments are the mechanism.
+> **Important:** Do not use the standard CTA at the end of every Personal Story post. Overusing it makes the feed feel repetitive and salesy. Aim for roughly every other personal story. When skipping the CTA, use a soft close or engagement question instead.
 
-**Soft sign-off (for Personal Update or lighter posts):**
+**Soft close (for Personal Story posts without a CTA, or Personal Update posts):**
 ```
 To your health, happiness and success.
 Olly
 ```
+
+Or simply a warm, reflective final line that fits the story — e.g. "I hope you do too. Olly" or "Great memories! 😎"
+
+**Engagement close (for Engagement posts):**
+End with the question. No explicit CTA needed — the comments are the mechanism.
 
 ---
 
@@ -202,10 +206,12 @@ Week starts Monday — update this in Notion settings if needed.
 2. Always use "something called Heart Coherence" — never assume the audience knows what it is
 3. No hyphens as clause separators — full stops only
 4. Short lines and heavy white space throughout — this is not a paragraph-format platform
-5. Use ellipsis (...) for pacing in personal story posts
-6. Emojis where they fit naturally — not as a rule
-7. No 😎 on every post — only when it genuinely fits
-8. British English throughout — casual and real is fine
-9. CTA always links to the free community in the comments — not bio
-10. When replacing a post, update the existing page — never create a new one
-11. Never use banned words from `CLAUDE.md`
+5. **Blank line after every single line or phrase** — not just between paragraphs. Applies to every sentence, every list item, every one-liner. This ensures correct spacing when copied out of Notion.
+6. Use ellipsis (...) for pacing in personal story posts
+7. Emojis where they fit naturally — not as a rule
+8. No 😎 on every post — only when it genuinely fits
+9. British English throughout — casual and real is fine
+10. **Do not use the standard CTA on every Personal Story** — vary it. Roughly every other personal story should have a CTA. Others use a soft close or reflective ending. Constant pitching kills the tone.
+11. CTA always links to the free community in the comments — not bio
+12. When replacing a post, update the existing page — never create a new one
+13. Never use banned words from `CLAUDE.md`
