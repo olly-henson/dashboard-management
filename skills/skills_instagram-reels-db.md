@@ -22,10 +22,30 @@
 | Title | Title | Internal reference name — not published anywhere |
 | Date | Date | Mon–Fri only by default. Saturday/Sunday by exception — change date manually in Backlog view |
 | Type of Post | Select | See content pillars below |
+| Argument Stage | Select | Which stage of the argument this reel hits — see options below. Must be populated on every reel. |
+| Argument Fit | Text | 2–3 sentences explaining exactly how this reel connects to the argument sheet: which pain it hooks into, what belief it challenges or reinforces, and why it's relevant to the audience right now. Must be populated on every reel. |
 | Hook | First 1-2 spoken sentences on camera — pattern interrupt only, never a promise |
 | Caption | Text | Full Instagram caption: written text + CTA + hashtags. Ready to copy straight in. |
 | Status | Select | Idea → Scripted → Filmed → Edited → Scheduled → Published |
-| Rating | Select | Good / Don't Like — blank by default |
+| Rating | Select | Good / Don't Like / Made Changes — blank by default |
+
+---
+
+## Argument Stage (Required Field)
+
+Every reel must be assigned one of these stages. This is the single most important quality check — if you can't assign a stage, the reel is off-message and needs rewriting.
+
+| Option | When to Use |
+|--------|-------------|
+| Hook into Pain | Reel opens with a symptom, frustration, or felt experience the prospect recognises right now. Primary stage — majority of reels should hit this. |
+| Challenge Current Belief | Reel shows why conventional medicine, alternative treatments, or one-off practices haven't worked — and why. |
+| Name the Cause | Reel explains the nervous system stuck in fight or flight as the actual mechanism driving symptoms. |
+| Present New Mechanism | Reel introduces or reinforces Heart Coherence — always using "something called Heart Coherence" phrasing. |
+| Paint Promised Land | Reel paints a specific, vivid picture of life after the loop breaks — symptom free, back to doing what they love. |
+
+**What's currently working:** The top 3 performing reels all hit "Hook into Pain" or "Name the Cause". Prioritise these two stages heavily when filling the backlog.
+
+**Not Applicable** — use for Engagement-Based and Personal reels only. These are not tied to an argument stage.
 
 ---
 
@@ -68,6 +88,8 @@ Reels are 15–60 seconds. The first 1.7 seconds determine whether someone keeps
 - ✅ Lead with a symptom, frustration, or real prospect quote
 - ✅ Name the exact experience — not "chronic illness" broadly but a specific feeling or moment
 - ✅ Use prospect language wherever possible — their words outperform any paraphrase
+- ✅ Lead with the symptom or experience, not the diagnosis — people who don't identify as "chronically ill" still stop for exhaustion, brain fog, not feeling themselves. Broaden reach by leading with the felt state.
+- ❌ Don't open with a condition name (fibromyalgia, CFS, dysautonomia) unless the reel is specifically targeting that condition — symptom-first hooks reach all avatars simultaneously
 
 **High-resonance words and phrases:**
 - "Chronic symptoms" — use in the majority of hooks
@@ -115,12 +137,12 @@ Every caption follows this structure:
 
 [One line of hope — "the body finally has the chance to heal" style]
 
-➡️ Comment HEART below and I will send you access to my free community where I teach Heart Coherence — a simple daily practice to calm your nervous system and get your life back from chronic symptoms.
+➡️ Comment HEART below and I will send you access to my free community where I teach Heart Coherence. a simple daily practice to calm your nervous system and get your life back from chronic symptoms.
 
-👉 Or grab it directly here: https://www.skool.com/the-healing-code-8609
-
-#chronicillness #chronicfatigue #fibromyalgia #invisibleillness #chronicpain #brainfog #dysautonomia #nervoussystemhealing #nervoussystemregulation #heartcoherence #fightorflight #chronicillnessrecovery #healing #backtolife #regulateforrelief
+#chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection
 ```
+
+**No URLs** — do not include any Skool links. Links are not clickable in Instagram captions.
 
 ---
 
@@ -130,7 +152,8 @@ Every caption follows this structure:
 - **Limit hyphens overall** — if a sentence needs one to connect two thoughts, rewrite as two sentences.
 - **One idea per paragraph** — short punchy lines read better on mobile.
 - **CTA always last** — never mid-caption.
-- **Hashtags always at the bottom** — same set on every reel unless specifically requested otherwise.
+- **No URLs in captions** — links are not clickable on Instagram. Remove any Skool or community links entirely. The HEART comment CTA is the only conversion mechanism.
+- **Hashtags always at the bottom** — use only these 5 every time: `#chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection`
 - **No banned words** — game changer, deep dive, synergy, leverage, hustle, grind, unlock, skyrocket, supercharge. Full list in `CLAUDE.md`.
 - **British English** throughout.
 
@@ -138,10 +161,10 @@ Every caption follows this structure:
 
 ## Standard Hashtag Set
 
-Use on every reel unless Olly requests a different set:
+Use on every reel — 5 hashtags only:
 
 ```
-#chronicillness #chronicfatigue #fibromyalgia #invisibleillness #chronicpain #brainfog #dysautonomia #nervoussystemhealing #nervoussystemregulation #heartcoherence #fightorflight #chronicillnessrecovery #healing #backtolife #regulateforrelief
+#chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection
 ```
 
 ---
@@ -152,7 +175,7 @@ Run when the backlog is running low (fewer than 2 weeks of content remaining).
 
 **Prompt:**
 ```
-Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-management and the marketing skills from C:\Users\Olly\AI OS\marketing. Generate 30 new Instagram Reel ideas for the backlog. Read prospect_intel.md and argument_sheet.md first. Each reel needs: title, date (Mon–Fri only, 3 per day, continuing from the last date in the database), type of post, hook, caption (with CTA and hashtags at the bottom), status set to Idea. No hyphens as clause separators in captions — use full stops. Add them directly to Notion database ID 36e30e58-6a0d-81e7-8c2a-e6c4f729915a.
+Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-management\skills\skills_instagram-reels-db.md and the marketing skills from C:\Users\Olly\AI OS\marketing. Generate 30 new Instagram Reel ideas for the backlog. Read prospect_intel.md and argument_sheet.md first. Each reel needs: title, date (Mon–Fri only, 3 per day, continuing from the last date in the database), type of post, argument stage, argument fit (2–3 sentences), hook, caption (CTA + 5 hashtags only: #chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection — no URLs), status set to Idea. Rules: no hyphens as clause separators — full stops only. Lead with the symptom or felt experience in hooks, not the diagnosis. Prioritise Hook into Pain and Name the Cause argument stages. British English throughout. Add directly to Notion database ID 36e30e58-6a0d-81e7-8c2a-e6c4f729915a.
 ```
 
 ---
@@ -163,7 +186,27 @@ Mark any reel as "Don't Like" in the Rating field, then run this prompt:
 
 **Prompt:**
 ```
-Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-management and the marketing skills from C:\Users\Olly\AI OS\marketing. Check the Instagram Reels database (ID: 36e30e58-6a0d-81e7-8c2a-e6c4f729915a) for any reels with Rating set to "Don't Like". For each one, read prospect_intel.md and argument_sheet.md and generate a replacement reel keeping the same date. Use the pattern interrupt hook framework. Populate title, hook, caption (with CTA and hashtags, no hyphens as clause separators). Set status back to Idea and rating back to blank. Update the existing Notion page — do not create a new one.
+Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-management\skills\skills_instagram-reels-db.md and the marketing skills from C:\Users\Olly\AI OS\marketing. Check the Instagram Reels database (ID: 36e30e58-6a0d-81e7-8c2a-e6c4f729915a) for any reels with Rating set to "Don't Like". For each one, read prospect_intel.md and argument_sheet.md and generate a replacement reel keeping the same date. Use the pattern interrupt hook framework — lead with the symptom or felt experience, not the diagnosis. Populate title, argument stage, argument fit (2–3 sentences), hook, caption (CTA + 5 hashtags: #chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection — no URLs, no hyphens as clause separators). Set status back to Idea and rating back to blank. Update the existing Notion page — do not create a new one.
+```
+
+---
+
+## Updating Reels Marked "Made Changes"
+
+Use this when Olly has filmed a reel and changed the hook, script, or angle on the day. The "Made Changes" rating flags that the Notion record no longer matches what was actually filmed. Olly will describe what changed.
+
+**What to do:**
+1. Read Olly's description of what changed (hook, angle, structure, CTA, etc.)
+2. Update the Hook and Caption fields on the existing Notion page to match what was filmed
+3. Update the Argument Stage and Argument Fit if the change shifted the argument angle
+4. Note the change in a comment or in the Argument Fit field so future content can build on what worked
+5. Set Rating back to blank once updated
+
+**How changes inform future content:** Any pattern, phrase, or structural change Olly makes on the day is a signal about what felt more natural or more resonant. Log it in prospect_intel.md if it reveals something new about what lands with the audience.
+
+**Prompt:**
+```
+Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-management\skills\skills_instagram-reels-db.md and the marketing skills from C:\Users\Olly\AI OS\marketing. I have marked a reel as "Made Changes" — [describe what changed]. Update the Hook, Caption, Argument Stage and Argument Fit on the existing Notion page to reflect what was actually filmed. No URLs in the caption. Use only these 5 hashtags: #chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection. No hyphens as clause separators. Set Rating back to blank once updated.
 ```
 
 ---
@@ -182,12 +225,18 @@ Load the dashboard management skill from C:\Users\Olly\AI OS\dashboard-managemen
 ## Rules
 
 1. Always read `prospect_intel.md` before generating any reel — never generate from imagination alone
-2. Always use "something called Heart Coherence" — never assume the audience knows what it is
-3. Never start a hook with "In this video..." or any promise-style opener
-4. No hyphens as clause separators in captions — full stops only
-5. Skool CTA always at the bottom of the caption, before hashtags
-6. Hashtags always last — same standard set unless otherwise requested
-7. Dates always Mon–Fri. Saturday only by exception (Olly moves it manually)
-8. When replacing a reel, update the existing page — never create a new one and leave the old one
-9. Never use banned words from `CLAUDE.md`
-10. British English throughout
+2. Always read `argument_sheet.md` and `CLAUDE.md` — every reel must connect to the argument
+3. Always assign an Argument Stage — if you cannot clearly assign one, rewrite the reel until you can
+4. Always write an Argument Fit — 2–3 sentences: which pain it hooks into, what belief it challenges or reinforces, why it is relevant to this audience right now
+5. Prioritise "Hook into Pain" and "Name the Cause" stages — these are the proven top performers
+6. Always use "something called Heart Coherence" — never assume the audience knows what it is
+7. Lead with the symptom or felt experience in hooks, not the diagnosis — broader reach, more avatars
+8. Never start a hook with "In this video..." or any promise-style opener
+9. No hyphens as clause separators in captions — full stops only
+10. No URLs in captions — links are not clickable on Instagram
+11. Hashtags always last — 5 only: #chronicillness #chronicpain #nervoussystem #selfhealing #mindbodyconnection
+12. Dates always Mon–Fri. Saturday only by exception (Olly moves it manually)
+13. When replacing or updating a reel, always update the existing Notion page — never create a new one
+14. When a reel is marked "Made Changes", update Hook, Caption, Argument Stage and Argument Fit to match what was filmed — then set Rating back to blank
+15. Never use banned words from `CLAUDE.md`
+16. British English throughout
