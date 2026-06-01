@@ -1,19 +1,21 @@
-# Dashboard Management — Weekly Business Review
+# Dashboard Management — Monthly Business Review
 
-> This skill gives Claude complete context to run, troubleshoot, and maintain Olly's Notion Business Dashboard every Monday at 9am. Load this file when Olly asks you to run the dashboard script or make any adjustments to the dashboard.
+> This skill gives Claude complete context to run, troubleshoot, and maintain Olly's Notion Business Dashboard. Run once a month. Load this file when Olly asks you to run the dashboard script or make any adjustments to the dashboard.
 
 ---
 
 ## What This Skill Covers
 
-- Running the weekly metrics script
+- Running the monthly metrics script
 - Interpreting the output and flagging anything that needs attention
 - Troubleshooting common script failures
 - Making adjustments to the dashboard or databases
 
 ---
 
-## The Weekly Script
+## The Monthly Script
+
+**Trigger phrase:** "Run the dashboard script"
 
 **Command to run:**
 ```
@@ -22,7 +24,7 @@ node "C:\Users\Olly\AI OS\marketing\fetch_metrics.mjs"
 
 **Location:** `C:\Users\Olly\AI OS\marketing\fetch_metrics.mjs`
 
-**When:** Every Monday at 9am SAST — calendar event "🚨 Weekly Business Dashboard Review — Olly Henson Coaching" is set up in Google Calendar (recurring, every Monday).
+**When:** Once a month at the start of each new month.
 
 ---
 
@@ -47,9 +49,36 @@ node "C:\Users\Olly\AI OS\marketing\fetch_metrics.mjs"
 | Metric | Where to find it |
 |--------|-----------------|
 | YouTube CTR (%) | YouTube Studio → Analytics → Content tab → Impressions CTR |
-| Instagram — all metrics | Instagram app → Profile → Professional Dashboard → Account Insights → last 7 days. Record: Accounts Reached, Profile Visits, Link Clicks, Followers, New Followers. Top post: Content You Shared → sort by Reach. |
-| Revenue & Expenses | End of month only — enter in Notion → Business Dashboard → Finances |
+| Instagram — all metrics | Instagram app → Profile → Professional Dashboard → Account Insights → last 7 days. Record: Accounts Reached, Profile Visits, Link Clicks, Followers, New Followers, Views, Comments, Saves, Shares. Top post: Content You Shared → sort by Reach. Enter into Notion → Business Dashboard → Instagram. |
+| Skool — About Page Visitors + Conversion Rate | Skool dashboard → About page analytics. Enter into Notion → Business Dashboard → Skool Members. |
+| Revenue & Expenses | Enter in Notion → Financial Management → Monthly Financials. Run "sync the financials" after adding expenses. |
 | Avg % Improvement | Auto from script once clients complete programme — otherwise enter manually from Google Sheets Summary Dashboard |
+
+---
+
+## Dashboard Summary Blocks — What Each Shows
+
+Each block is auto-updated by the script on every run. Here's what each now displays:
+
+### 📊 Marketing block (`36e30e58-6a0d-81a5-be52-efb489ccc899`)
+*"Marketing Figures to beat this month:"*
+- 🎬 YouTube: Views | CTR | Audience Retention (from most recent Notion row with data)
+- 📸 Instagram: Views | Comments | Saves | Shares (from most recent Notion row with data)
+- 📧 Email: Open Rate | Reply Rate (from most recent Notion row with data)
+- 🏫 Skool: About Page Visitors | Conversion Rate (from most recent Notion row with data)
+- 🌐 Website: Total Visits | Unique Visitors (from most recent Notion row with data)
+
+### 💵 Sales block (`36e30e58-6a0d-81af-b991-dc61d4f12e95`)
+*"Sales figures to beat this month:"*
+- 💰 Sales Growth: Skool DM Conversations | New Customers | MRR (from most recent Customers DB row with data)
+
+### 🚀 Delivery block (`36e30e58-6a0d-81f9-9823-c019527b2ac4`)
+*"Delivery metrics to beat this month:"*
+- 🤝 Customer Satisfaction: Avg % Improvement (from Customer Satisfaction DB — populates once clients complete programme)
+
+### 📋 Financial Management block (`36e30e58-6a0d-817f-8b54-db801a31fb3e`)
+*"Financial numbers to beat this month:"*
+- 📈 Finances: MRR | Expenses | Profit (from Monthly Financials DB — most recent row with data)
 
 ---
 
@@ -57,27 +86,17 @@ node "C:\Users\Olly\AI OS\marketing\fetch_metrics.mjs"
 
 **URL:** https://www.notion.so/Business-Dashboard-36e30e586a0d81c88c70dfa1fc988004
 
-### Summary Callout Blocks (top of dashboard)
-These are auto-updated by the script on every run.
-
-| Block | Notion Block ID | Notes |
-|-------|----------------|-------|
-| 📊 Marketing | `36e30e58-6a0d-81a5-be52-efb489ccc899` | Shows YouTube, Instagram, Email, Skool, Website growth |
-| 🚀 Delivery | `36e30e58-6a0d-81f9-9823-c019527b2ac4` | Links to Customer Satisfaction DB |
-| 💵 Sales | `36e30e58-6a0d-81af-b991-dc61d4f12e95` | Links to Sales Growth DB |
-| 📋 Financial Management | `36e30e58-6a0d-817f-8b54-db801a31fb3e` | Links to Finances DB — shows only "Finances", NOT Expenses/Profit separately |
-
 ### Sub-databases (each is a child page of the dashboard)
 | Page | Database ID | Key columns |
 |------|-------------|-------------|
 | YouTube | `36e30e58-6a0d-814f-939e-c49fab4e411f` | Subscribers, Views, Watch Time, CTR, Retention, Top Video, growth % |
-| Instagram | `36e30e58-6a0d-81d9-a0d5-f5a2a944845d` | Followers, Reached, Views, Interactions, Best Reel, growth % |
-| Email Subscribers | `36e30e58-6a0d-8106-a888-e0caa729eb12` | Total Subscribers, growth % |
-| Skool Members | `36e30e58-6a0d-8116-817a-ee4a94d0f3ba` | Total Members, growth % |
-| Customers (Sales Growth) | `36e30e58-6a0d-817e-ad03-fb879a1323d8` | New Customers, New Skool Members, Conversion Rate, growth % |
-| Website | `36e30e58-6a0d-81d2-8d43-e1c4f2da396f` | Total Visits, growth % |
+| Instagram | `36e30e58-6a0d-81d9-a0d5-f5a2a944845d` | Followers, Reached, Views, Comments, Saves, Shares, Best Reel, growth % |
+| Email Subscribers | `36e30e58-6a0d-8106-a888-e0caa729eb12` | Total Subscribers, Open Rate, Reply Rate, growth % |
+| Skool Members | `36e30e58-6a0d-8116-817a-ee4a94d0f3ba` | Total Members, About Page Visitors, Conversion Rate, growth % |
+| Customers (Sales Growth) | `36e30e58-6a0d-817e-ad03-fb879a1323d8` | New Customers, Skool DM Conversations, MRR, growth % |
+| Website | `36e30e58-6a0d-81d2-8d43-e1c4f2da396f` | Total Visits, Unique Visitors, growth % |
 | Customer Satisfaction | `36e30e58-6a0d-81b2-9f0c-fb3ba412015d` | Avg % Improvement, Active Clients, Notes |
-| Finances | `36e30e58-6a0d-81e2-817b-fceff7538eef` | Month, Revenue ($), MRR ($), Expenses ($), Profit (formula: MRR − Expenses) |
+| Finances | `36e30e58-6a0d-81e2-817b-fceff7538eef` | Month, Revenue ($), MRR ($), Expenses ($), Profit |
 
 ### Main Business Metrics Database
 **ID:** `36e30e58-6a0d-8187-ac85-d3b16d11e297`
@@ -104,33 +123,40 @@ Stores the top-level monthly snapshot: all key numbers in one row per month.
 
 ## Interpreting the Output — What to Flag
 
-After running the script, review each metric against the previous week/month and flag anything that needs attention:
+After running the script, review each metric against the previous month and flag anything that needs attention:
 
 ### YouTube
 | Signal | What it means | Suggested action |
 |--------|--------------|-----------------|
 | CTR (%) dropping | Thumbnails or titles not compelling enough | Review top-performing titles; test new thumbnail styles |
 | Views dropping | Content not resonating or posting frequency dropped | Check posting schedule; review hook quality |
-| Watch Time / Retention dropping | Viewers dropping off early | Review video structure; hook and first 30 seconds |
+| Retention dropping | Viewers dropping off early | Review video structure; hook and first 30 seconds |
 | Subscribers stalled | Growth plateauing | Analyse top video and replicate angle |
 
 ### Instagram
 | Signal | What it means | Suggested action |
 |--------|--------------|-----------------|
-| Accounts Reached dropping | Reels not being pushed by algorithm | Review hooks; check if posting consistently |
-| Followers not converting from Reach | Content not compelling enough to follow | Stronger CTA; check profile bio |
-| Profile Visits not converting to followers | Bio/profile not doing its job | Review profile, bio and pinned posts |
+| Views dropping | Reels not being pushed by algorithm | Review hooks; check posting consistency |
+| Comments/Saves/Shares low | Content not resonating deeply | Review content against argument sheet |
+| Followers not growing | Profile not converting reach | Review bio and pinned posts |
 
-### Email / Skool
+### Email
 | Signal | What it means | Suggested action |
 |--------|--------------|-----------------|
-| Email Subscribers not growing | Not enough leads entering the funnel | Review top-of-funnel content; check CTA is HEART |
-| Skool Members stalled | Free community not growing | Check Skool CTA in content and email |
+| Open Rate dropping | Subject lines not compelling | Test new subject line styles |
+| Reply Rate low | Emails not prompting engagement | Add more direct questions or personal stories |
 
-### Sales / Customers
+### Skool
 | Signal | What it means | Suggested action |
 |--------|--------------|-----------------|
-| Customers not growing | Conversion from community to paid not working | Review DM follow-up process; check application flow |
+| About Page Visitors low | Not enough traffic to Skool page | Check CTA in content — codeword HEART |
+| Conversion Rate dropping | Visitors not joining | Review About page copy |
+
+### Sales
+| Signal | What it means | Suggested action |
+|--------|--------------|-----------------|
+| DM Conversations low | Not enough prospects engaging | Review DM follow-up process |
+| New Customers not growing | Conversion from community to paid not working | Review application flow |
 
 ### Website
 | Signal | What it means | Suggested action |
@@ -149,10 +175,10 @@ Each sub-database page must have the **Marketing OS** integration connected, oth
 If the main Business Metrics database is ever deleted and recreated, update `DB_ID` on line ~28 of `fetch_metrics.mjs` with the new database ID.
 
 ### YouTube Growth showing "—"
-Caused by missing previous month row in the YouTube sub-database. Will resolve automatically once two months of data exist. Can also be caused by YouTube Analytics API errors (check Google Cloud Console — if error rate is high, may be a quota or OAuth scope issue).
+Caused by missing previous month row in the YouTube sub-database. Will resolve automatically once two months of data exist.
 
-### Financial Management callout reverting
-The script updates the Financial Management callout on every run. It must show only **📈 Finances** (not Expenses/Profit separately). If it reverts, check the `snapshotUpdates` array in `fetch_metrics.mjs` around line ~725.
+### Financial Management callout showing "—"
+Expected until MRR is entered in Monthly Financials and expenses are synced. Run "sync the financials" first, then enter MRR.
 
 ### Customer Satisfaction link pointing to wrong page
 Must link to the Customer Satisfaction database block ID `36e30e586a0d81b29f0cfb3ba412015d` — NOT to `NOTION_CUSTOMERS_DB_ID` which points to the Sales Growth database.
@@ -178,7 +204,7 @@ If Olly asks to **"run the backfill script for [month] [year]"**, update `fetch_
 node "C:\Users\Olly\AI OS\marketing\fetch_may_retention.mjs"
 ```
 
-This pulls YouTube Analytics data for the specified month from the API and updates the correct row in the Notion YouTube sub-database. Use it whenever Olly wants the final confirmed figures for a past month (the main weekly script only ever fetches the current month).
+This pulls YouTube Analytics data for the specified month from the API and updates the correct row in the Notion YouTube sub-database. Use it whenever Olly wants the final confirmed figures for a past month (the main monthly script only ever fetches the current month).
 
 **To change the month:** edit lines with `startDate` and `endDate` (set to `YYYY-MM-01` / `YYYY-MM-DD`) and update the Notion filter (`"May 2026"` → the target month label).
 
@@ -215,7 +241,7 @@ This reads all expense rows, groups them by linked month, and patches the Monthl
 
 | File | Purpose |
 |------|---------|
-| `fetch_metrics.mjs` | Main weekly script — pulls all data and updates Notion |
+| `fetch_metrics.mjs` | Main monthly script — pulls all data and updates Notion |
 | `fetch_may_retention.mjs` | Backfill script — pulls YouTube Analytics for a specific past month and updates Notion |
 | `sync_financials.mjs` | Syncs Expenses → Monthly Financials relation (run when Olly says "sync the financials") |
 | `create_dashboard_db.mjs` | One-time script — creates Business Metrics database |
