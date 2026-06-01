@@ -170,11 +170,54 @@ When Olly asks to change the dashboard:
 
 ---
 
+## Backfilling a Previous Month
+
+If Olly asks to **"run the backfill script for [month] [year]"**, update `fetch_may_retention.mjs` with the correct start/end dates for that month, then run it:
+
+```
+node "C:\Users\Olly\AI OS\marketing\fetch_may_retention.mjs"
+```
+
+This pulls YouTube Analytics data for the specified month from the API and updates the correct row in the Notion YouTube sub-database. Use it whenever Olly wants the final confirmed figures for a past month (the main weekly script only ever fetches the current month).
+
+**To change the month:** edit lines with `startDate` and `endDate` (set to `YYYY-MM-01` / `YYYY-MM-DD`) and update the Notion filter (`"May 2026"` → the target month label).
+
+---
+
+## Financial Management
+
+**Notion page:** Financial Management (inside Daily Operations)
+**Expenses DB ID:** `37230e58-6a0d-819c-83da-f68e6167e521`
+**Monthly Financials DB ID:** `37230e58-6a0d-81f4-9e9d-e1932a881e5a`
+
+### How it works
+- **Expenses DB** — log individual expenses as they happen: Description, Date, Category, Amount ($), Notes. Link each expense to the correct month via the **Month** field.
+- **Monthly Financials DB** — one row per month. Enter MRR manually. Total Expenses is a rollup (auto-sums linked expenses). Profit is a formula (MRR − Total Expenses).
+
+### Syncing expenses
+Notion's relation sync is unreliable. When Olly says **"sync the financials"**, run this script:
+
+```
+node "C:\Users\Olly\AI OS\marketing\sync_financials.mjs"
+```
+
+This reads all expense rows, groups them by linked month, and patches the Monthly Financials rows directly so the rollup updates correctly.
+
+### End of month routine
+1. Add all expenses to Expenses DB, linking each to the month
+2. Run "sync the financials"
+3. Enter MRR in Monthly Financials
+4. Profit auto-calculates
+
+---
+
 ## Files Reference
 
 | File | Purpose |
 |------|---------|
 | `fetch_metrics.mjs` | Main weekly script — pulls all data and updates Notion |
+| `fetch_may_retention.mjs` | Backfill script — pulls YouTube Analytics for a specific past month and updates Notion |
+| `sync_financials.mjs` | Syncs Expenses → Monthly Financials relation (run when Olly says "sync the financials") |
 | `create_dashboard_db.mjs` | One-time script — creates Business Metrics database |
 | `setup_dashboard.mjs` | One-time script — builds dashboard page layout |
 | `add_calendar_reminder.mjs` | One-time script — created the Google Calendar recurring event |
